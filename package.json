@@ -1,0 +1,27 @@
+{
+    "name": "excel_publiposting",
+    "version": "1.0.0",
+    "description": "",
+    "main": "start.ts",
+    "scripts": {
+        "test": "tsc && node build/start.js test",
+        "start": "tsc && node build/start.js 3001",
+        "build": "tsc",
+        "build:prod": "CI=true tsc"
+    },
+    "author": "Plawn",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/blob-to-buffer": "^1.2.0",
+        "@types/jszip": "^3.1.6",
+        "@types/mz": "2.7.3",
+        "tslint": "^6.1.3",
+        "@types/node-pdftk": "^2.1.4",
+        "typescript": "^4.3.2"
+    },
+    "dependencies": {
+        "node-pdftk": "^2.1.3",
+        "pdf-lib": "^1.16.0",
+        "petit_nodejs_publipost_connector": "^1.0.2"
+    }
+}
