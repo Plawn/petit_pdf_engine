@@ -1,62 +1,9 @@
-# Excel publiposting service
+# Petit PDF Engine
 
-**Do NOT update jszip**
+This engine is based on the [petit_nodejs_publipost_connector](https://github.com/Plawn/petit_nodejs_publipost_connector) and should be used with the [petit_publipost_gateway](https://github.com/Plawn/petit_publipost_gateway).
 
-This service will be behind the api-doc service behind the excel-publiposting lib
+It is based on [pdftk](https://www.npmjs.com/package/node-pdftk) and [pdf-lib](https://www.npmjs.com/package/pdf-lib/v/1.6.0), it should automaticcaly work with the publipost_gateway.
 
-## To start the service
- 
-```sh
-yarn start
-```
-or
-```sh
-yarn build && node build/start.js <port> <config_file>
-```
+Note:
 
-## TODO
-
-- make better object copy in order to reduce latency and cpu usage
-- make Dockerfile
-- make docker-compose
-
-This app should run in the end in the same container as the main api-doc service and should be hidden from the other applications
-This app should only be queried by the main api-doc app
-
-
-## Endpoints
-
-POST /publipost
-
-This endpoint will be used to publipost the template:
-You need to send :
-```json
-{
-    "data": {},
-    "template_name":"filename",
-    "output_name":"<name>",
-    "bucket_name":"<name>"
-}
-```
-### POST /documents
-
-This endpoint will be used to get documents infos
-You need to send :
-```json
-{
-    "name":"<name>"
-}
-```
-
-### POST /load_template
-
-This service will be controlled by the global publiposting service, so we have to tell him what to load and how
-You need to send:
-```json
-{
-    "template_name":"<name>",
-    "bucket_name":"<name>"
-}
-```
-
-It will respond with an object containing the fails and successes
+Ensure the version of the connector is compatible with the version of the gateway
