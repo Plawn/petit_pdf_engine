@@ -1,8 +1,8 @@
-FROM node:16-alpine
+FROM node:16-stretch-slim
 
 WORKDIR /api
 
-RUN apk update && apk add --no-cache pdftk
+RUN apt update && apt install pdftk -y
 
 COPY package.json yarn.lock ./
 
