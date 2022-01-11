@@ -1,0 +1,10 @@
+.github
+.vscode
+build
+node_modules
+test
+.dockerignore
+.gitignore
+Dockerfile
+README.md
+.gitlab-ci.yml
