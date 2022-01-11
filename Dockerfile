@@ -2,7 +2,7 @@ FROM node:16-alpine
 
 WORKDIR /api
 
-RUN apk update && apk add pdftk -y
+RUN apk update && apk add --no-cache pdftk
 
 COPY package.json yarn.lock ./
 
